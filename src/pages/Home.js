@@ -1,9 +1,12 @@
-import Header from "../components/Header";
+import TopNav from "../components/TopNav";
+import Footer from "../components/Footer";
+import Welcome from "../components/Welcome";
 
 function Home() {
     return (<>
-        <Header></Header>
-        <h2>Home Page</h2>
+        <TopNav/>
+        <Welcome/>
+        <Footer/>
     </>)
 }
 
