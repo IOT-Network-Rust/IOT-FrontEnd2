@@ -23,25 +23,25 @@ function TopNav() {
             className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
             style={{bsScrollHeight: "100px"}}
           >
-            <li className="nav-item">
+            <li key={1} className="nav-item">
               <a className="nav-link active" aria-current="page" href="/">
                 Home
               </a>
             </li>
 
-            <li className="nav-item">
+            <li key={2} className="nav-item">
               <a className="nav-link" href="#">
                 Connect
               </a>
             </li>
 
-            <li className="nav-item">
+            <li key={3} className="nav-item">
               <a className="nav-link" href="/tracker">
                 Tracker
               </a>
             </li>
 
-            <li className="nav-item">
+            <li key={4} className="nav-item">
               <a
                 className="nav-link"
                 aria-disabled="true"
@@ -51,7 +51,7 @@ function TopNav() {
                 Project Source
               </a>
             </li>
-            <li className="nav-item">
+            <li key={5} className="nav-item">
               <a className="nav-link" aria-disabled="true" href="/credits">
                 Credits
               </a>

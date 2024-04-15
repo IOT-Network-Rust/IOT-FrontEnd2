@@ -14,13 +14,13 @@ function DeviceCardList(props: Props) {
 
   let elements:React.JSX.Element[] = []
   for (let i = 0; i < names.length; i++) {
-    elements.push(<DeviceCard name={names[i]} id={ids[i]} subtitle={subtitles[i]}/>)
+    elements.push(<li key={i}><DeviceCard name={names[i]} id={ids[i]} subtitle={subtitles[i]}/></li>)
   }
 
   return (<>
   <div
     className="d-flex flex-column align-items-stretch flex-shrink-0 bg-light"
-    style={{width: "20%", maxHeight: "76.5vh", overflowY: "auto"}}
+    style={{width: "20%", maxHeight: "76.5vh", overflowY: "auto", overflowX: "hidden"}}
   >
     <a
       href="/"
