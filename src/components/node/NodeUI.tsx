@@ -2,16 +2,16 @@ import React from "react";
 
 interface Props {
   type: string;
-  device_id: string;
+  name: string;
 }
 
 function NodeUI(props:Props) {
   const type = props.type
-  const device_id = props.device_id
+  const name = props.name
 
   return (
     <>
-      <div _ngcontent-klp-c220="" className="card text-white mb-4 bg-primary">
+      <div _ngcontent-klp-c220="" className="card text-white mb-4 bgTextBox" style={{margin: "5%", marginBottom: "2%", marginTop: "2%"}}>
         <div _ngcontent-klp-c221="" className="card-body">
           <div
             _ngcontent-klp-c221=""
@@ -22,8 +22,7 @@ function NodeUI(props:Props) {
                 {type}
               </div>
               <div _ngcontent-klp-c221="" className="text-lg fw-bold">
-                {"Some sort of data will go here that shows a snippet of what to expect"}
-                $40,000
+                {name}
               </div>
             </div>
           </div>

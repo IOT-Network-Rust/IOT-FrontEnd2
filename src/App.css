@@ -1,0 +1,20 @@
+.bgPrimary {
+  background-color: rgb(71, 145, 90);
+}
+
+.bgSecondary {
+  background-color: rgb(105, 203, 203);
+}
+
+.bgNavBar {
+  background-color: rgb(184, 57, 22);
+}
+
+.bgTextBox {
+  background-color: rgb(146, 134, 71);
+}
+
+.bgTextBoxSmall {
+  background-color: rgb(94, 80, 10);
+
+}

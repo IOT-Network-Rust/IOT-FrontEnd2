@@ -2,8 +2,8 @@ import React from "react";
 
 function TopNav() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" style={{height: "12vh"}}>
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg bgNavBar" style={{height: "12vh"}}>
+      <div className="container-fluid ">
         <a className="navbar-brand" href="#">
           IOT Device Network
         </a>
