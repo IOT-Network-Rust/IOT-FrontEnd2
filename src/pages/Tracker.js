@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import TopNav from "../components/TopNav";
-import Footer from "../components/Footer";
 import DeviceCardList from "../components/DeviceCardList.tsx";
 
 function Tracker() {
@@ -34,12 +32,10 @@ function Tracker() {
 
   return (
     <>
-      <TopNav />
       <div style={{ height: "81vh" }}>
         {/* Pass device data as props to DeviceCardList */}
         <DeviceCardList item_names={itemNames} item_ids={itemIds} item_subtitles={itemDescriptions} />
       </div>
-      <Footer />
     </>
   );
 }

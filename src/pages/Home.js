@@ -1,12 +1,10 @@
-import TopNav from "../components/TopNav";
-import Footer from "../components/Footer";
 import Welcome from "../components/Welcome";
+import Featured from "../components/Featured";
 
 function Home() {
     return (<>
-        <TopNav/>
         <Welcome/>
-        <Footer/>
+        <Featured/>
     </>)
 }
 
