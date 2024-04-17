@@ -15,7 +15,7 @@ function DeviceCard(props: Props) {
 
   return (
     <>
-      <Link to={`/tracker/${id}`} className="list-group-item list-group-item-action py-3 bgTextBoxSmall" >
+      <Link to={`/tracker/${id}/nodes`} className="list-group-item list-group-item-action py-3 bgTextBoxSmall" >
         <div className="d-flex w-100 align-items-center justify-content-between">
           <strong className="mb-1">{name}</strong>
           <small className="text-muted">{id}</small>

@@ -15,7 +15,7 @@ function NodeList(props: Props) {
     return <li key={index} style={{margin: "2%"}}>{element}</li>;
   });
 
-  return <ul style={{listStyleType: "none"}}>{wrapped_nodes}</ul>
+  return <ul style={{listStyleType: "none", margin: "5%"}}>{wrapped_nodes}</ul>
 }
 
 export default NodeList;

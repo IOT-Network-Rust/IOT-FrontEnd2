@@ -1,5 +1,5 @@
 import React from "react";
-import Node from "./Node";
+import Node from "./Node.tsx";
 
 interface Props {
   title: string;
@@ -19,19 +19,19 @@ function OverviewNode(props: Props) {
   return (
     <Node
       node={
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", flexDirection: "row" }}>
+        <div className="d-flex flex-column">
+          <div className="d-flex flex-row justify-content-between">
             <div>
-              <h3>{title}</h3>
-              <h2>{subtitle}</h2>
+              <h5>{subtitle}</h5>
+              <h4>{title}</h4>
             </div>
             <div>
-              <h3>{note}</h3>
+              <h6>{note}</h6>
             </div>
           </div>
 
-          <br />
-          <h4>Inspect</h4>
+          <hr className="border"/>
+          <h5><a href="your_link_here">Inspect</a></h5>
         </div>
       }
     />
