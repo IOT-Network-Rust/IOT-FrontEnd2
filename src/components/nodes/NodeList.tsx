@@ -11,7 +11,11 @@ better organized
 function NodeList(props: Props) {
   const nodes = props.nodes;
 
-  return <>{nodes}</>;
+  const wrapped_nodes = nodes.map((element, index) => {
+    return <li key={index} style={{margin: "2%"}}>{element}</li>;
+  });
+
+  return <ul style={{listStyleType: "none"}}>{wrapped_nodes}</ul>
 }
 
 export default NodeList;
