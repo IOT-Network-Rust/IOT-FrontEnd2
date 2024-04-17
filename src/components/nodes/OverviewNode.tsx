@@ -1,4 +1,5 @@
 import React from "react";
+import Node from "./Node";
 
 interface Props {
   title: string;
@@ -16,20 +17,24 @@ function OverviewNode(props: Props) {
   const note = props.note;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
-      <div style={{ display: "flex", flexDirection: "row" }}>
-        <div>
-          <h3>{title}</h3>
-          <h2>{subtitle}</h2>
-        </div>
-        <div>
-          <h3>{note}</h3>
-        </div>
-      </div>
+    <Node
+      node={
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div>
+              <h3>{title}</h3>
+              <h2>{subtitle}</h2>
+            </div>
+            <div>
+              <h3>{note}</h3>
+            </div>
+          </div>
 
-      <br />
-      <h4>Inspect</h4>
-    </div>
+          <br />
+          <h4>Inspect</h4>
+        </div>
+      }
+    />
   );
 }
 

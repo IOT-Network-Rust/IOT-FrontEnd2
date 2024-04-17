@@ -1,4 +1,5 @@
 import React from "react";
+import Node from "./Node";
 
 interface Props {
   topBar: string[];
@@ -16,24 +17,28 @@ function TableNode(props: Props) {
   let toIndex = props.toIndex;
 
   return (
-    <table>
-      <tbody>
-        <tr key={-1}>
-          <td></td>
-          {topBar.map((title, index) => (
-            <td key={index}>{title}</td>
-          ))}
-        </tr>
-        {grid.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {toIndex && <td key={-1}>{rowIndex}</td>}
-            {row.map((cell, cellIndex) => (
-              <td key={cellIndex}>{cell}</td>
+    <Node
+      node={
+        <table>
+          <tbody>
+            <tr key={-1}>
+              <td></td>
+              {topBar.map((title, index) => (
+                <td key={index}>{title}</td>
+              ))}
+            </tr>
+            {grid.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {toIndex && <td key={-1}>{rowIndex}</td>}
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex}>{cell}</td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      }
+    />
   );
 }
 
