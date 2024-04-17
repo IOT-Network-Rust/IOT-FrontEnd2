@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
-import Tracker from "./pages/Tracker";
+import Tracker from "./pages/Tracker.tsx";
 import TopNav from "./components/basic/TopNav";
 import Footer from "./components/basic/Footer";
 import "./App.css";
