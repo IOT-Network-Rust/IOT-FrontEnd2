@@ -9,16 +9,21 @@ interface Props {
 }
 
 function SideBarItem(props: Props) {
+  const title = props.title;
+  const subtitle = props.subtitle;
+  const note = props.note;
+  const href = props.href;
+
   return (
     <Link
-      to={props.href}
-      className="list-group-item list-group-item-action py-3 bgTextBoxSmall"
+      to={href}
+      className="list-group-item list-group-item-action py-3 bgTextBoxSmall p-3"
     >
       <div className="d-flex w-100 align-items-center justify-content-between">
-        <strong className="mb-1">{props.title}</strong>
-        <small className="text-muted">{props.subtitle}</small>
+        <strong className="mb-1">{title}</strong>
+        <small className="text-muted">{subtitle}</small>
       </div>
-      <div className="col-10 mb-1 small">{props.note}</div>
+      <div className="col-10 mb-1 small">{note}</div>
     </Link>
   );
 }

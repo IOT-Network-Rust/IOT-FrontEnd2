@@ -1,55 +1,56 @@
-import React, { useState, useEffect } from "react";
-import DeviceCardList from "../components/DeviceCardList.tsx";
-import NodeListUI from "../components/node/NodeListUI.tsx";
+import React, { useEffect, useState } from "react";
+import NodeList from "../components/nodes/NodeList.tsx";
+import OverviewNode from "../components/nodes/OverviewNode.tsx";
+import { Sensor, get_device_sensors, get_devices, Device } from "../data/devices.tsx";
 import { useParams } from "react-router-dom";
-import { get_devices, Device } from "../data/devices.tsx";
+import SideBar from "../components/sidebar/SideBar.tsx";
+import SideBarItem from "../components/sidebar/SideBarItem.tsx";
 
-function Tracker() {
-  // Define state to store device data
-  const [deviceData, setDeviceData] = useState<Device[]>([]);
+function DeviceTracker() {
+  const url_params = useParams();
+  const id = url_params.id ? url_params.id : "#";
 
-  // Fetching data from API
+  const [sensorData, setSensorData] = useState<Sensor[]>([]);
+  const [devicesData, setDevicesData] = useState<Device[]>([]);
+
   useEffect(() => {
     async function fetch_data() {
-      setDeviceData(await get_devices());
-    };
+      setDevicesData(await get_devices());
+    }
     fetch_data();
   }, []);
 
-  const itemNames = deviceData.map((item) => item.name.replace("_", " "));
-  const itemIds = deviceData.map((item) => item.id);
-  const itemDescriptions = deviceData.map((item) => "");
+  useEffect(() => {
+    async function fetch_data() {
+      setSensorData(await get_device_sensors(id));
+    }
+    fetch_data();
+  }, [id]);
 
-  const params = useParams();
-  let id = params.id ? params.id : itemIds[0];
+  const elements = sensorData.map((item) => {
+    return (
+      <OverviewNode
+        title={item.name}
+        subtitle={item.data_type}
+        note={"This is a note"}
+        href={`/tracker/${id}/inspect`}
+      />
+    );
+  });
 
+  const side_bar_items = devicesData.map((item) => {
+    return <SideBarItem title={item.name} subtitle={"Subtitle"} note={item.id} href={`/tracker/${item.id}`}/>
+  })
   return (
-    <>
-      <div style={{ height: "81vh" }} className="bgSecondary">
-        {/* Pass device data as props to DeviceCardList */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            width: "100vw",
-            height: "100%",
-          }}
-        >
-          <div style={{ width: "30vw", height: "100%" }} className="bgPrimary">
-            <DeviceCardList
-              item_names={itemNames}
-              item_ids={itemIds}
-              item_subtitles={itemDescriptions}
-            />
-          </div>
-
-          <div style={{ width: "70vw", height: "100%" }}>
-            <NodeListUI device_id={id}></NodeListUI>
-          </div>
-        </div>
+    <div style={{display: "flex", flexDirection: "row", height: "78vh"}}>
+      <div style={{ width: "25%", height: "100%", overflowY: "auto"}}>
+        <SideBar elements={side_bar_items} />
       </div>
-    </>
+      <div style={{ width: "75%", height: "100%", overflowY: "auto"}}>
+        <NodeList nodes={elements} />
+      </div>
+    </div>
   );
 }
 
-export default Tracker;
+export default DeviceTracker;

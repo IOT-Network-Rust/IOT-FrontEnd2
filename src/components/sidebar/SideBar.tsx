@@ -11,19 +11,21 @@ function SideBar(props: Props) {
   });
 
   return (
-    <div>
-      <div>
-        <h3>Side Bar</h3>
-      </div>
-      <ul
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          listStyleType: "none",
-        }}
+    <div
+      className="d-flex flex-column align-items-stretch flex-shrink-0 bgPrimary"
+      style={{ height: "100%", overflowY: "auto", overflowX: "hidden" }}
+    >
+      <a
+        href="/"
+        className="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom bgTextBox"
       >
+        <svg className="bi me-2" width="30" height="24"></svg>
+        <span className="fs-5 fw-semibold">Your Devices</span>
+      </a>
+
+      <div className="list-unstyled list-group list-group-flush border-bottom scrollarea">
         {wrapped_elements}
-      </ul>
+      </div>
     </div>
   );
 }

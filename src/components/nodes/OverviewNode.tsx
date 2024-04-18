@@ -5,6 +5,7 @@ interface Props {
   title: string;
   subtitle: string;
   note: string;
+  href: string;
 }
 
 /*
@@ -15,6 +16,7 @@ function OverviewNode(props: Props) {
   const title = props.title;
   const subtitle = props.subtitle;
   const note = props.note;
+  const href = props.href;
 
   return (
     <Node
@@ -31,7 +33,7 @@ function OverviewNode(props: Props) {
           </div>
 
           <hr className="border"/>
-          <h5><a href="your_link_here">Inspect</a></h5>
+          <h5><a href={href}>Inspect</a></h5>
         </div>
       }
     />

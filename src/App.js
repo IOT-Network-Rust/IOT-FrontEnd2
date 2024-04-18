@@ -4,9 +4,9 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Tracker from "./pages/Tracker.tsx";
+import TrackerInspect from "./pages/TrackerInspect.tsx";
 import TopNav from "./components/basic/TopNav";
 import Footer from "./components/basic/Footer";
-import DeviceTracker from "./pages/DeviceTracker.tsx";
 import "./App.css";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/tracker/:id?" element={<Tracker />}></Route>
-            <Route path="/tracker/:id/nodes" element={<DeviceTracker/>}></Route>
+            <Route path="/tracker/:id?/inspect" element={<TrackerInspect/>}></Route>
           </Routes>
         </BrowserRouter>
         <Footer />
